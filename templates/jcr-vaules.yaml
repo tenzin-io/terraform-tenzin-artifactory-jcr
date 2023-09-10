@@ -1,0 +1,18 @@
+artifactory:
+  nginx:
+    enabled: false
+  ingress:
+    enabled: true
+    className: nginx
+    annotations:
+      cert-manager.io/cluster-issuer: ${certificate_issuer_name}
+      nginx.ingress.kubernetes.io/proxy-body-size: 50m
+      nginx.ingress.kubernetes.io/backend-protocol: HTTP
+    hosts:
+      - "${jcr_ingress_host}"
+    tls:
+      - secretName: jcr-tls-secret
+        hosts:
+          - "${jcr_ingress_host}"
+  postgresql:
+    postgresqlPassword: ${postgresql_password}
