@@ -1,5 +1,5 @@
 resource "helm_release" "container_registry" {
-  name             = "container-registry"
+  name             = "artifactory-jcr"
   chart            = "artifactory-jcr"
   repository       = "https://charts.jfrog.io"
   version          = "102.19.1"
