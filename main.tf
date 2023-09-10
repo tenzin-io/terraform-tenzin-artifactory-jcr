@@ -2,7 +2,7 @@ resource "helm_release" "container_registry" {
   name             = "artifactory-jcr"
   chart            = "artifactory-jcr"
   repository       = "https://charts.jfrog.io"
-  version          = "102.19.1"
+  version          = "107.63.14"
   namespace        = "jfrog"
   create_namespace = true
   values = [
